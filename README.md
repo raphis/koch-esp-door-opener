@@ -20,8 +20,7 @@ The system is designed to influence the existing system as little as possible (b
 ![Schematic](circuit/Schematic_Door-Opener-ESP-D1_2021-02-28.png)
 
 ### Hardware Pictures
-![](pictures/d1-mini-board.jpeg)
-![](pictures/koch-k933up-d1-opener.jpeg)
+![](pictures/d1-mini-board.jpeg) ![](pictures/koch-k933up-d1-opener.jpeg)
 
 ## Software
 This project is based on a configuration for [Home Assistant](https://www.home-assistant.io/) however is not limited to it. Any other home-automation software can be used as long as HTTP communication is possible from/to it.
