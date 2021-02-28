@@ -19,6 +19,11 @@ The system is designed to influence the existing system as little as possible (b
 ## Schematic
 ![Schematic](circuit/Schematic_Door-Opener-ESP-D1_2021-02-28.png)
 
+### Intercom Connections
+As shown in the schematic above, the following connections were soldered directly onto the intercom's PCB:
+* Speaker output
+* "Door open" button
+
 ### Hardware Pictures
 * [D1 Mini Board](pictures/d1-mini-board.jpeg)
 * [Koch 933UP Connection](pictures/koch-k933up-d1-opener.jpeg)
@@ -30,6 +35,8 @@ This project is based on a configuration for [Home Assistant](https://www.home-a
 The microcontroller has been configured with ESPhome. The corresponding configuration file can be found below:
 
 [ESPHome Config File](esphome/d1-mini-door-opener-esp.yaml)
+
+The microcontroller connects to the WiFi during the boot process. It goes into deep-sleep mode again after 90s to save power.
 
 ### Home Assistant
 The following things need to be configured within Home Assistant
