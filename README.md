@@ -10,8 +10,8 @@ FIXME: mention why a dedicated power-supply is being used
 * 1x D1 Mini [Single Relay Shield](https://www.aliexpress.com/item/4000420770002.html?spm=a2g0s.9042311.0.0.2fd14c4dPqfgSa)
 * 1x D1 Mini [ProtoBoard Shield](https://www.aliexpress.com/item/32766059774.html?spm=a2g0s.9042311.0.0.2fd14c4dPqfgSa)
 * Resistors
-** 1x 10 Ohm
-** 1x 12k Ohm
+  * 1x 10 Ohm
+  * 1x 12k Ohm
 * 1x Diode 1N4148
 * 1x Optocoupler PC817
 * 1x Logic OR-Gate (e.g. 74HC32)
