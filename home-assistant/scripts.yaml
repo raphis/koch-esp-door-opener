@@ -1,0 +1,23 @@
+door_opener_esp:
+  alias: Open The Door
+  sequence:
+  - condition: state
+    entity_id: input_boolean.door_opener_esp_online
+    state: 'on'
+  - service: shell_command.turn_on_door_buzzer
+    data: {}
+  - wait_template: ''
+    timeout: 00:00:03
+    continue_on_timeout: true
+  - service: shell_command.turn_off_door_buzzer
+    data: {}
+  - service: script.sonos_say
+    data:
+      sonos_entity: media_player.sonos_kitchen
+      message: Door has been opened.
+      volume: 0.25
+      delay: 00:00:03
+      cache: true
+  mode: single
+  icon: mdi:door-open
+

@@ -1,0 +1,3 @@
+input_boolean:
+  door-opener-esp-online:
+    icon: mdi:door-open

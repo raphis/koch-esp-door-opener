@@ -1,0 +1,66 @@
+esphome:
+  name: door_opener_esp
+  platform: ESP8266
+  board: d1_mini
+  on_boot:
+    - while:
+        condition:
+          not:
+            wifi.connected
+        then:
+        - delay: 100ms
+    # FIXME: webhook URL
+    - http_request.post: http://192.168.1.253:8123/api/webhook/door-opener-esp?action=on 
+  on_shutdown:
+    # FIXME: webhook URL
+    - http_request.post: http://192.168.1.253:8123/api/webhook/door-opener-esp?action=off 
+
+http_request:
+  useragent: esphome/d1-mini
+  timeout: 10s
+
+wifi:
+  # FIXME: WLAN credentials
+  ssid: "SSID"
+  password: "passphrase"
+
+  # FIXME: WLAN fallback credentials
+  # Enable fallback hotspot (captive portal) in case wifi connection fails
+  ap:
+    ssid: "D1 Mini Wifi Fallback Hotspot"
+    password: "fallback-passphrase"
+
+  fast_connect: on
+
+web_server:
+  port: 80
+
+deep_sleep:
+  run_duration: 90s 
+
+switch:
+  - platform: gpio
+    name: "relay"
+    pin: 5 
+    restore_mode: ALWAYS_OFF
+    inverted: no
+
+light:
+  - platform: binary
+    name: "D1 LED"
+    output: led1
+
+output:
+  - platform: gpio 
+    id: led1
+    pin: 2
+    inverted: yes
+
+# Enable logging
+logger:
+  level: DEBUG
+
+ota:
+  # FIXME: OTA credentials
+  password: "ota-pw"
+

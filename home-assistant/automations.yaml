@@ -1,0 +1,13 @@
+- id: '200'
+  alias: Set door opener ESP helper-state when webhook is called
+  description: ''
+  trigger:
+  - platform: webhook
+    webhook_id: door-opener-esp
+  condition: []
+  action:
+  - service: input_boolean.turn_{{ trigger.query["action"] }}
+    data: {}
+    entity_id: input_boolean.door_opener_esp_online
+  mode: single
+
