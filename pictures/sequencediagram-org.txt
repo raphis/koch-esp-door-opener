@@ -11,6 +11,8 @@ Home Assistant-->Home Assistant: Set Input Helper
 Home Assistant-->Home Assistant: Show lovelace card
 Tenant->Home Assistant: Pushes door-open\n button lovelace card (HTTP)
 activate Home Assistant #00ee77
+space -4
+Home Assistant-->Home Assistant: Calls script
 Home Assistant->D1 Mini: Relay on (GPIO, HTTP)
 D1 Mini->Koch Intercom: Pushes "door open" button
 Home Assistant->D1 Mini: Relay off (GPIO, HTTP)
