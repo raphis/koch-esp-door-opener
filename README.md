@@ -34,9 +34,9 @@ The microcontroller has been configured with ESPhome. The corresponding configur
 ### Home Assistant
 The following things need to be configured within Home Assistant
 * Boolean Input helper ([configuration.yaml](home-assistant/configuration.yaml)): indicates wheter or not the ESP is in deep-sleep mode
-* Webhook Automation ([automations.yaml](home-assistant/automations.yaml): sets state of input helper when webhook is called
-* Shell commands ([configuration.yaml](home-assistant/configuration.yaml): to send HTTP calls to the ESP to change relay state
-* Script ([scripts.yaml](home-assistant/scripts.yaml): to execute shell commands and other stuff
+* Webhook Automation ([automations.yaml](home-assistant/automations.yaml)): sets state of input helper when webhook is called
+* Shell commands ([configuration.yaml](home-assistant/configuration.yaml)): to send HTTP calls to the ESP to change relay state
+* Script ([scripts.yaml](home-assistant/scripts.yaml)): to execute shell commands and other stuff
 
 NOTE: The ESPHome integration/API of Home Assistant wasn't used, as it takes too long to recognize when the device comes online. With the webhook setup, Home Assistant is aware that the device is up as soon as it booted.
 
