@@ -1,4 +1,4 @@
-# koch-esp-door-opener
+# Smart Door-Opener for Koch Intercom
 Project to integrate a legacy (1970s) Koch 933UP Multi-Apartment Intercom into Home Assistant and be able to open the door when someone rings the bell.
 
 The system is designed to influence the existing system as little as possible (by using an optocoupler) as failures could impact other tenants in the building as well. This is why a dedicated 5V power-supply is used.
