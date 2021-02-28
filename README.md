@@ -20,7 +20,7 @@ The system is designed to influence the existing system as little as possible (b
 * 4-wire connector cable (e.g. RGB LED-strip cable)
 
 ## Schematic
-![Schematic](circuit/Schematic_Door-Opener-ESP-D1_2021-02-28.svg)
+![Schematic](circuit/Schematic_Door-Opener-ESP-D1_2021-02-28.png)
 
 ### Hardware Pictures
 * [D1 Mini Board](pictures/d1-mini-board.jpeg)
