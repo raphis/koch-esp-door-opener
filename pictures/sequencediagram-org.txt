@@ -1,0 +1,20 @@
+title ESP Door Opener
+
+actor "**Visitor" as Visitor #red
+
+Visitor->Koch Intercom: Ring the bell
+actor "**Tenant" as Tenant #green
+Koch Intercom-->Tenant: Ring Sound\n(Speaker)
+Koch Intercom->D1 Mini: RST (wake up)
+D1 Mini-> Home Assistant: Calls Webhook (HTTP)
+Home Assistant-->Home Assistant: Set Input Helper
+Home Assistant-->Home Assistant: Show lovelace card
+Tenant->Home Assistant: Pushes door-open\n button lovelace card (HTTP)
+activate Home Assistant #00ee77
+Home Assistant->D1 Mini: Relay on (GPIO, HTTP)
+D1 Mini->Koch Intercom: Pushes "door open" button
+Home Assistant->D1 Mini: Relay off (GPIO, HTTP)
+deactivate Home Assistant
+space 1
+Visitor-->Tenant: Enters building
+

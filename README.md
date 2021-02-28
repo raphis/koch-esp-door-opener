@@ -3,6 +3,9 @@ Project to integrate a legacy (1970s) Koch 933UP Multi-Apartment Intercom into H
 
 The system is designed to influence the existing system as little as possible (by using an optocoupler) as failures could impact other tenants in the building as well. This is why a dedicated 5V power-supply is used.
 
+## Sequence Diagram
+![Sequence Diagram](pictures/sequencediagram-org.svg)
+
 ## Parts
 * 5V USB Power-Supply (e.g. Powerbank). NOTE: the powerbank must not cut power if low currents are present (during ESP deep sleep). I used this [battery shield](https://www.aliexpress.com/item/4001118637158.html?spm=a2g0s.9042311.0.0.2fd14c4dPqfgSa) and a 2000mAh 18650 battery.
 * 1x Wemos D1 Mini or similar (1 GPIO + WLAN needed)
@@ -38,5 +41,5 @@ The following things need to be configured within Home Assistant
 * Shell commands ([configuration.yaml](home-assistant/configuration.yaml)): to send HTTP calls to the ESP to change relay state
 * Script ([scripts.yaml](home-assistant/scripts.yaml)): to execute shell commands and other stuff
 
-NOTE: The ESPHome integration/API of Home Assistant wasn't used, as it takes too long to recognize when the device comes online. With the webhook setup, Home Assistant is aware that the device is up as soon as it booted.
+NOTE: The ESPHome integration/API of Home Assistant wasn't used, as it takes too long to recognize when the device comes online. With the webhook setup Home Assistant is aware immediately that the device is up as soon as it booted.
 
