@@ -1,8 +1,7 @@
 # koch-esp-door-opener
 Project to integrate a legacy (1970s) Koch 933UP Multi-Apartment Intercom into Home Assistant and be able to open the door when someone rings the bell.
 
-The system is designed to influence the existing system as little as possible (by using an optocoupler) as failures could impact other tenants in the building as well.
-FIXME: mention why a dedicated power-supply is being used
+The system is designed to influence the existing system as little as possible (by using an optocoupler) as failures could impact other tenants in the building as well. This is why a dedicated 5V power-supply is used.
 
 ## Parts
 * 5V USB Power-Supply (e.g. Powerbank). NOTE: the powerbank must not cut power if low currents are present (during ESP deep sleep). I used this [battery shield](https://www.aliexpress.com/item/4001118637158.html?spm=a2g0s.9042311.0.0.2fd14c4dPqfgSa) and a 2000mAh 18650 battery.
@@ -15,9 +14,14 @@ FIXME: mention why a dedicated power-supply is being used
 * 1x Diode 1N4148
 * 1x Optocoupler PC817
 * 1x Logic OR-Gate (e.g. 74HC32)
+* 4-wire connector cable (e.g. RGB LED-strip cable)
 
 ## Schematic
 ![Schematic](circuit/Schematic_Door-Opener-ESP-D1_2021-02-28.png)
+
+### Hardware Pictures
+![](pictures/d1-mini-board.jpeg)
+![](pictures/koch-k933up-d1-opener.jpeg)
 
 ## Software
 This project is based on a configuration for [Home Assistant](https://www.home-assistant.io/) however is not limited to it. Any other home-automation software can be used as long as HTTP communication is possible from/to it.
@@ -29,12 +33,10 @@ The microcontroller has been configured with ESPhome. The corresponding configur
 
 ### Home Assistant
 The following things need to be configured within Home Assistant
-* Boolean Input helper: indicates wheter or not the ESP is in deep-sleep mode
-* Webhook Automation: sets state of input helper when webhook is called
-* Shell commands: to send HTTP calls to the ESP to change relay state
-* Script: to execute shell commands and other stuff
+* Boolean Input helper ([configuration.yaml](home-assistant/configuration.yaml)): indicates wheter or not the ESP is in deep-sleep mode
+* Webhook Automation ([automations.yaml](home-assistant/automations.yaml): sets state of input helper when webhook is called
+* Shell commands ([configuration.yaml](home-assistant/configuration.yaml): to send HTTP calls to the ESP to change relay state
+* Script ([scripts.yaml](home-assistant/scripts.yaml): to execute shell commands and other stuff
 
-FIXME: mention why ESPhome integration wasn't used 
-
-## HowTo
+NOTE: The ESPHome integration/API of Home Assistant wasn't used, as it takes too long to recognize when the device comes online. With the webhook setup, Home Assistant is aware that the device is up as soon as it booted.
 
