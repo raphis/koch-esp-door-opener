@@ -14,6 +14,7 @@ activate Home Assistant #00ee77
 space -4
 Home Assistant-->Home Assistant: Calls script
 Home Assistant->D1 Mini: Relay on (GPIO, HTTP)
+space -4
 D1 Mini->Koch Intercom: Pushes "door open" button
 Home Assistant->D1 Mini: Relay off (GPIO, HTTP)
 deactivate Home Assistant
