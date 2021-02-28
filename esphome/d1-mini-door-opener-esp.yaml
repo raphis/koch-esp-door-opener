@@ -10,10 +10,10 @@ esphome:
         then:
         - delay: 100ms
     # FIXME: webhook URL
-    - http_request.post: http://192.168.1.253:8123/api/webhook/door-opener-esp?action=on 
+    - http_request.post: http://<HA-IP>:8123/api/webhook/door-opener-esp?action=on 
   on_shutdown:
     # FIXME: webhook URL
-    - http_request.post: http://192.168.1.253:8123/api/webhook/door-opener-esp?action=off 
+    - http_request.post: http://<HA-IP>:8123/api/webhook/door-opener-esp?action=off 
 
 http_request:
   useragent: esphome/d1-mini
