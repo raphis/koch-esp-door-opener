@@ -11,7 +11,7 @@ The system is designed to influence the existing system as little as possible (b
 * 1x Wemos D1 Mini (ESP8266) or similar (1 GPIO + WLAN needed)
 * 1x D1 Mini [Single Relay Shield](https://www.aliexpress.com/item/4000420770002.html?spm=a2g0s.9042311.0.0.2fd14c4dPqfgSa)
 * 1x D1 Mini [ProtoBoard Shield](https://www.aliexpress.com/item/32766059774.html?spm=a2g0s.9042311.0.0.2fd14c4dPqfgSa)
-* 1x 10Ohm Resistor
+* 1x Resistor (see below for sizing)
 * 1x Diode 1N4148
 * 1x Optocoupler PC817
 * 4-wire connector cable (e.g. RGB LED-strip cable)
@@ -23,6 +23,20 @@ The system is designed to influence the existing system as little as possible (b
 As shown in the schematic above, the following connections were soldered directly onto the intercom's PCB:
 * Speaker output
 * "Door open" button
+
+### Resistor Sizing ###
+The sizing of the resistor depends on the voltage on the speaker. In our Koch K933UP we measured around 1.0V with a multimeter. As the speaker get's AC current, this means we have a peak of 1.41V.
+
+The PC817 optocoupler has a forward voltage of 1.2V and a current of 20mA. This means we need to have a voltage drop of around 0.2V.
+
+Base formula: U=R*I
+U=Voltage V
+R=Resistor Ohm
+I=Current A
+
+Our example:
+
+R = U/I = 0.2V / 0.02A = 10 Ohm
 
 ### Hardware Pictures
 * [D1 Mini Board](pictures/d1-mini-board.jpeg)
