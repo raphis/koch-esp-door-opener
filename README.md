@@ -27,7 +27,7 @@ As shown in the schematic above, the following connections were soldered directl
 ### Resistor Sizing ###
 The sizing of the resistor depends on the voltage on the speaker. In our Koch K933UP we measured around 1.0V with a multimeter. As the speaker get's AC current, this means we have a peak of 1.41V.
 
-The PC817 optocoupler has a forward voltage of 1.2V and a current of 20mA. This means we need to have a voltage drop of around 0.2V.
+The PC817 optocoupler has a forward voltage of 1.2V and a current of 20mA. This means we need to have a voltage drop of around 0.2V (difference to 1.2V).
 
 Base formula: U=R*I
 U=Voltage V
