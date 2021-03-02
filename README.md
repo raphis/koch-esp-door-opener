@@ -29,7 +29,7 @@ The sizing of the resistor depends on the voltage on the speaker. In our Koch K9
 
 The PC817 optocoupler has a forward voltage of 1.2V and a current of 20mA. This means we need to have a voltage drop of around 0.2V (difference to 1.2V).
 
-Base formula: U=R*I
+Base formula: U=R\*I
 
 U=Voltage V
 R=Resistor Ohm
