@@ -31,9 +31,7 @@ The PC817 optocoupler has a forward voltage of 1.2V and a current of 20mA. This 
 
 Base formula: U=R\*I
 
-U=Voltage V
-R=Resistor Ohm
-I=Current A
+U=Voltage V, R=Resistor Ohm, I=Current A
 
 Our example:
 
